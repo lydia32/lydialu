@@ -1,0 +1,784 @@
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/* Global Styles */
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Cormorant Garamond", serif;
+    background-color: #fafbff;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the body takes up at least 100% of viewport height */
+    margin: 0;
+}
+
+a[href], input[type='submit'], input[type='image'], label[for], select, button, .pointer {
+    cursor: crosshair;
+}
+
+.gradient {
+    background-image: linear-gradient(to top, #f3e7e960 0%, #e3eeff60 99%, #e3eeff60 100%);
+}
+
+header, footer {
+    flex-shrink: 0; /* Prevent header and footer from shrinking */
+}
+
+/* Header Styles */
+header {
+    background-color: #fff;
+    padding: 20px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+    float: right;
+}
+
+.nav-links li {
+    display: inline;
+    margin-right: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    padding: 8px 10px;
+    color: #333;
+    transition: all 0.8s ease;
+    position: relative;
+}
+
+.nav-links a::before {
+    content: "";
+    width: 0;
+    height: .5px;
+    background-color: #333;
+    position: absolute;
+    top: 87%;
+    left: -2px;
+    transition: all 0.8s ease;
+}
+
+.nav-links a::after {
+    content: "";
+    width: 0;
+    height: .5px;
+    background-color: #333;
+    position: absolute;
+    top: 93%;
+    left: 2px;
+    transition: all 0.5s ease;
+}
+
+.nav-links a:hover::before,
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.current {
+    position: relative;
+    box-shadow: 1px 1px 3px rgba(28, 28, 28, 0.5);
+}
+
+/* Main Content Styles */
+
+#introduction {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+#introduction .text {
+    flex: 1;
+    padding: 30px 20px;
+    text-align: right;
+}
+
+.text h1 {
+    font-size: 3em;
+}
+
+h1.stroke {
+    font-size: 2.5em;
+    color: transparent;
+    -webkit-text-stroke: 1px;
+    -webkit-text-stroke-color: #425269;
+}
+
+#introduction .text p {
+    margin: 20px 0;
+    line-height: 1.5;
+}
+
+#introduction .image-container {
+    width: 45%;
+}
+
+#introduction .image-container img {
+    width: 80%;
+}
+
+.about-me {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+}
+
+.about-me .image-container {
+    position: relative;
+}
+
+.about-me .text {
+    width: 90%;
+    padding: 0 80px;
+}
+
+.about-me h2 {
+    font-size: 2em;
+}
+
+.about-me p {
+    margin: 10px 0;
+    line-height: 1.5;
+}
+
+#resume-section {
+    width: 90%;
+    max-width: 1200px;
+    background-color: #fafbff; /* Match background color of main content */
+    padding: 30px 0; /* Adjust padding as needed */
+    margin: auto;
+    text-align: center;
+}
+
+.resume-title {
+    font-size: 2em; /* Adjust the font size as needed */
+    margin-bottom: 50px;
+    width: 100%;
+}
+
+#resume-section .resumes {
+    display: flex;
+    margin: auto;
+    width: 60%;
+}
+
+.resume img {
+    max-width: 80%;
+    height: auto;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Adjust values for desired shadow effect */
+    margin-bottom: 20px; /* Add margin for spacing */
+}
+
+h6 {
+    font-size: 1em;
+    font-weight: 500;
+}
+
+.main-content {
+    width: 80%;
+    margin: auto;
+    padding-bottom: 50px;
+}
+
+/* Button Styles */
+button {
+    text-decoration: none;
+    font-size: 1rem;
+    color: #3E3838;
+    background: #fffdfd99;
+    border: .9px solid #3E3838;
+    margin: 8px 0;
+    padding: 8px 0;
+    width: 140px;
+    text-align: center;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1; /* Ensure the text is above the pseudo-element */
+    font-family: "Cormorant Garamond", serif; /* Use specified font family */
+    transition: letter-spacing 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Smooth transition */
+}
+
+button::before {
+    content: "";
+    width: 0;
+    height: 100%;
+    background-color: #fff0f0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    letter-spacing: 1px;
+    transition: width 0.5s linear; /* Transition width separately */
+    z-index: -1;
+}
+
+button:hover::before {
+    width: 100%;
+}
+
+button:hover {
+    letter-spacing: 2.5px;
+}
+
+#contact {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#contact h2 {
+    font-size: 2em; /* Adjust the font size as needed */
+}
+
+#contact p {
+    margin: 20px 0 5px;
+}
+
+#contact button {
+    margin-bottom: 80px;
+    width: 180px;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+footer p {
+    margin: 0; /* Remove default margin */
+    line-height: normal; /* Ensure text is vertically centered */
+    margin: auto; /* Center the text vertically */
+}
+
+/* Project Gallery Styles */
+
+.page-title {
+    background-color: transparent;
+    text-align: center;
+}
+
+.page-title h1 {
+    margin: 20px 0;
+}
+
+.page-title p {
+    margin: 30px 0;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(250px, 1fr)); /* Ensure three items per row */
+    grid-gap: 20px;
+}
+
+.project-card {
+    height: 60vh;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.project-card::before {
+    content: "";
+    background-color: #666;
+    width: 2px;
+    height: 10%;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    transition: opacity .2s;
+}
+
+.thumbnail {
+    width: 100%; /* Set the width of the thumbnail container to 100% */
+    height: 0; /* Initialize height to 0 */
+    padding-top: 75%; /* Set the aspect ratio (4:3 in this example) */
+    position: relative; /* Ensure proper positioning of the image */
+    transform: scale(1);
+    overflow: hidden;
+    transition: transform .5s ease-in-out;
+}
+
+.project-card:hover::before {
+    opacity: 1;
+    animation: sliding 2s;
+}
+
+@keyframes sliding {
+    from {
+        top: 0;
+        left: 0;
+        width: 2px;
+        height: 40px;
+    }
+    42% {
+        top: 100%;
+        left: 0;
+        width: 2px;
+        height: 20px;
+    }
+    45% {
+        top: 99.5%;
+        left: 0;
+        width: 40px;
+        height: 2px;
+    }
+    to {
+        top: 99.5%;
+        left: 100%;
+        width: 40px;
+        height: 2px;
+    }
+}
+
+.project-card:hover .thumbnail {
+    transform: scale(1.1);
+}
+
+.thumbnail img {
+    position: absolute; /* Position the image absolutely within its container */
+    width: 100%; /* Ensure the image fills the container horizontally */
+    height: 100%; /* Ensure the image fills the container vertically */
+    object-fit: cover; /* Scale the image while preserving aspect ratio to cover the entire container */
+    top: 0; /* Position the image at the top */
+    left: 0; /* Position the image at the left */
+}
+
+.details {
+    margin-top: -30%;
+    width: 100%;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent background color */
+    backdrop-filter: blur(5px); /* Apply blur effect */
+    z-index: 1; /* Ensure the details are above the image */
+    display: flex;
+    flex-direction: column;
+}
+
+.details h3 {
+    font-size: 1.5em;
+    margin: 10px;
+}
+
+.details h5 {
+    display: inline-block;
+    font-size: 1em;
+    color: #666;
+    font-weight: 400;
+    align-self: flex-start;
+    padding: 5px 8px;
+    background-color: #fafbff99;
+    border-radius: 5px;
+}
+
+.details p {
+    color: #666;
+    margin: 0 10px 20px 10px;
+}
+
+.project-card .details a {
+    position: relative; /* Ensure relative positioning for the link */
+    text-decoration: none;
+    font-size: 1rem;
+    color: #3E3838;
+    background: #fffdfd99;
+    border: .9px solid #3E3838;
+    margin: 8px 0;
+    padding: 8px 20px;
+    text-align: center;
+    box-sizing: border-box;
+    font-family: "Cormorant Garamond", serif;
+    transition: letter-spacing 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    align-self: center;
+    justify-self: end;
+}
+
+.project-card .details a::before {
+    content: "";
+    width: 0;
+    height: 100%;
+    background-color: #fff0f0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    letter-spacing: 1px;
+    transition: width 0.5s linear;
+    z-index: -1;
+}
+
+.project-card .details a:hover::before {
+    width: 100%;
+}
+
+.project-card .details a:hover {
+    letter-spacing: 2.5px;
+}
+
+/* Learning Achievements Styles */
+.certificate-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    padding: 10px   20px; /* padding of the card content */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.certificate-image {
+    flex: 0 0 30%; /* Adjust the width of the image */
+    margin-right: 20px;
+}
+
+.certificate-image img {
+    width: 100%;
+    height: auto;
+}
+
+.certificate-details {
+    flex: 1;
+    text-align: left;
+    margin: 20px 0;
+}
+
+.certificate-details h2 {
+    margin: 0;
+}
+
+.certificate-details p {
+    color: #666;
+}
+
+.gradient-text {
+    display: inline-block;
+    position: relative;
+    font-size: 24px; /* Adjust font size as needed */
+    font-weight: 600; /* Use a slightly heavier font weight */
+    background: linear-gradient(45deg, #111, #333 70%, #666 88%); /* Darker gradient colors */
+    background-clip: padding-box;
+    -webkit-background-clip: text; /* Apply gradient only to the text */
+    -webkit-text-fill-color: transparent; /* Hide the original text color */
+}
+
+.skills-and-projects {
+    display: flex;
+}
+
+.skills-learned, .project-links {
+    flex: 1;
+}
+
+.skills-learned {
+    width: 45%;
+    margin-right: 5%; /* Add margin on the right side */
+}
+
+.project-links {
+    width: 45%;
+}
+
+.skills-learned h3, .project-links h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.project-links ul {
+    padding: 0; /* Remove default padding */
+    list-style: none; /* Remove default list styles */
+}
+
+.project-links ul li {
+    display: block; /* Ensure each link is displayed as a block element */
+    margin-bottom: 10px; /* Add some space between each project link */
+}
+
+.project-links ul li a,
+section a {
+    display: block; /* Ensure each link is displayed as a block element */
+    text-decoration: none;
+    font-size: 1rem;
+    color: #3E3838;
+    background: #fffdfd99;
+    border: .9px solid #3E3838;
+    margin: 0;
+    padding: 5px 20px;
+    width: 200px;
+    text-align: center;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1; /* Ensure the text is above the pseudo-element */
+    font-family: "Cormorant Garamond", serif; /* Use specified font family */
+    transition: letter-spacing 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Smooth transition */
+}
+
+.inpage-btn {
+    width: 150px;
+    margin: 20px auto;
+}
+
+.project-links ul li a::before,
+section a::before {
+    content: "";
+    width: 0;
+    height: 100%;
+    background-color: #fff0f0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    letter-spacing: 1px;
+    transition: width 0.5s linear; /* Transition width separately */
+    z-index: -1;
+}
+
+.project-links ul li a:hover::before,
+section a:hover::before {
+    width: 100%;
+}
+
+.project-links ul li a:hover,
+section a:hover {
+    letter-spacing: .8px;
+}
+
+/* Case Study Setting */
+
+.path {
+    margin: auto;
+    width: 80%;
+    height: 8vh;
+    line-height: 8vh;
+}
+
+.path a {
+    text-decoration: none;
+    color: #333;
+    font-size: smaller;
+    font-weight: 400;
+    transition: color .5s ease;
+}
+
+.path a:hover {
+    color: #999;
+}
+
+.image-container {
+    width: 100%;
+    transform: scale(1);
+    transition: transform .8s linear;
+    margin: 20px auto;
+}
+
+.large {
+    width: 200%;
+}
+
+.middle {
+    width: 80%;
+}
+
+.small {
+    width: 55%;
+}
+
+.image-container img {
+    width: 100%;
+}
+
+#hero {
+    position: relative;
+    margin-top: 50px;
+    padding: 0;
+}
+
+.title {
+    width: 25%;
+    height: 30%;
+    background-color: rgba(66,82,105, 1);
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1); /* Horizontal offset, Vertical offset, Blur radius, Spread radius, Color */
+    position: absolute;
+    top: -30px;
+    left: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title h1 {
+    font-size: 1.8em;
+    font-weight: 400;
+    color: #bbb;
+}
+
+.title h1:last-child {
+    font-size: 2.5em;
+    font-weight: 900;
+    color: #eee;
+}
+
+/* Section Titles */
+h2, h3, h4 {
+    color: #333; /* Adjust color to fit your website's color scheme */
+    margin-top: 50px;
+}
+
+section h2 {
+    position: relative;
+    font-size: 2.2em;
+}
+
+section h2::before {
+    content: "";
+    width: 70px;
+    height: 70px;
+    background-color: #c2d7f3;
+    border-radius: 50%;
+    position: absolute;
+    top: -30px;
+    left: -50px;
+    z-index: -1;
+}
+
+section h3 {
+    font-size: 1.5em;
+    position: relative;
+}
+
+section h3::before {
+    content: "";
+    background-image: url('../img/gourmety/double-comma.png');
+    background-size: 40px; /* Adjust the size */
+    position: absolute;
+    top: -15px;
+    left: -32px;
+    width: 40px;
+    height: 40px; /* Adjust as needed */
+}
+
+
+h4 {
+    font-size: 1.1em;
+}
+
+/* Section Content */
+section {
+    margin: 0 auto; /* Center the section content */
+    width: 75%; /* Set the content width to approximately 80% of the page */
+    max-width: 90%; /* Limit the maximum content width to approximately 90% of the page */
+    margin-bottom: 40px; /* Adjust margin-bottom as needed */
+    padding: 0 30px;
+}
+
+section p {
+    font-size: 1em;
+    line-height: 1.5;
+    margin: 5px 0 5px 20px;
+    color: #555; /* Adjust color to fit your website's color scheme */
+}
+
+section ol, section ul {
+    margin-left: 20px;
+    margin-bottom: 50px;
+    
+}
+
+section ol li {
+    list-style: decimal;
+    margin: 10px 0;
+}
+
+section ol li, section ul li {
+    margin-top: 10px;
+}
+
+strong {
+    font-size: 1.1em;
+}
+
+ol ul li {
+    list-style-type: circle;
+}
+
+
+/* flex-parent setting */
+
+.flex-parent {
+    display: flex;
+    gap: 1%;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-parent p {
+    padding-right: 80px;
+}
+
+.prototype-container {
+    position: relative;
+    margin: 50px auto;
+    max-width: 276px; /* Set maximum width to match iframe */
+    border: 3px solid #999; /* Add a border */
+    border-radius: 25px; /* Add border radius for rounded corners */
+    overflow: hidden; /* Hide overflow content */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a shadow for depth */
+}
+
+.prototype-container::before {
+    content: "";
+    position: absolute;
+    top: -30px; /* Adjust distance from top */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 138px; /* Adjust notch width */
+    height: 50px; /* Adjust notch height */
+    background-color: #999;
+    border-radius: 0 0 15px 15px; /* Rounded bottom corners */
+    z-index: 1; /* Ensure the notch is above the iframe */
+}
+
+
+.iframe-container {
+    display: flex;
+    justify-content: center;
+}
+
+#hollatte-hi-fi {
+    width: 30%;
+    height: 600px;
+}
+
+.videowrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+video {
+    width: 90%;
+    height: 400px;
+    object-fit: cover;
+}
+
