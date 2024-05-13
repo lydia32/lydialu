@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lydia Lu</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/x-icon" href="img/logo.png">
+    <link rel="stylesheet" href="https://use.typekit.net/qcz6zsy.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="aboutme.html" class="current">About Me</a></li>
+                <li><a href="project.html">Project Gallery</a></li>
+                <li><a href="achievement.html">Learning Achievement</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="introduction">
+        <div class="flex-parent">
+            <div class="text">
+                <h1>Lydia</h1>
+                <h1 class="stroke">Lu</h1>
+                <p>Volleyball ignites my drive,<br>
+                    Coffee fuels my thoughts alive.<br>
+                    Learning endlessly, I thrive,<br>
+                    Expanding horizons to arrive.</p>
+            </div>
+            <div class="image-container small">
+                <img src="img/photo.png" alt="Photo">
+            </div>
+        </div>
+    </div>
+    <div class="about-me">
+        <hr>
+        <div class="image-container middle">
+            <img src="img/about_me_photo.jpg" alt="About Me Photo">
+        </div>
+        <div class="text">
+            <h2>About Me</h2>
+            <p>Welcome! I'm Lydia Lu, a psychology graduate turned Human Resource Clerk in the biotech industry. While there, I delved into ERP system development, sparking my passion for UX design.</p>
+            <p>Now fully immersed in self-learning, I'm honing my UX skills while exploring front-end development and graphic design. This website is my canvas, showcasing my journey and projects. Join me in the ever-evolving world of design and technology. Thanks for visiting!</p>    
+        </div>
+    </div>
+    <section style="width: 50%; padding-top: 50px;">
+        <p>Have you ever pursued an interest for over a decade? With a fervent passion for volleyball and the resilience cultivated since childhood, I approach the journey of self-discovery with this spirit. Embarking on challenges with an unwavering determination, I've not only honed my skills on the volleyball court but also developed a mindset of continuous growth and exploration. As I navigate through various experiences, I bring with me the invaluable lessons learned from years of dedication to my craft.</p>
+    </section>
+    <div id="resume-section">
+        <hr>
+        <h2 class="resume-title">My Resume</h2>
+        <div class="resumes">
+            <div class="resume">
+                <img src="img/resume_chinese_thumbnail.png" alt="Chinese Resume">
+                <div class="buttons">
+                    <h6>Chinese Version Resume</h6>
+                    <button onclick="viewResume('chinese')">View PDF</button>
+                </div>
+            </div>
+            <div class="resume">
+                <img src="img/resume_english_thumbnail.png" alt="English Resume">
+                <div class="buttons">
+                    <h6>English Version Resume</h6>
+                    <button onclick="viewResume('english')">View PDF</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="contact">
+        <h2 class="">Contact Me</h2>
+        <p>Email: ylan8732@gmail.com</p>
+        <button id="emailButton">Shoot me an Email</button>
+    </div>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Lydia Lu. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function viewResume(language) {
+            const resumeUrl = language === 'chinese' ? 'img/ch-cv.pdf' : 'img/en-cv.pdf';
+            window.open(resumeUrl, '_blank');
+        }
+        
+        function sendEmail() {
+            var emailAddress = 'ylan8732@gmail.com';
+
+            var mailtoLink = 'mailto:' + encodeURIComponent(emailAddress);
+
+            window.location.href = mailtoLink;
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var emailButton = document.getElementById('emailButton');
+            emailButton.addEventListener('click', sendEmail);
+        });
+
+    </script>    
+</body>
+</html>
