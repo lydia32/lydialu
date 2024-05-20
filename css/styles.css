@@ -171,6 +171,7 @@ h1.stroke {
     display: flex;
     margin: auto;
     width: 60%;
+    justify-content: center;
 }
 
 .resume img {
