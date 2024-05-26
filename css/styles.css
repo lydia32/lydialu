@@ -401,7 +401,8 @@ section a {
     margin: auto;
     width: 80%;
     height: 8vh;
-    line-height: 8vh;
+    line-height: 2vh;
+    overflow-x: scroll;
 }
 
 .path a {
