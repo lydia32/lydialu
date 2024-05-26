@@ -509,7 +509,7 @@ h4 {
 /* Section Content */
 section {
     margin: 0 auto; /* Center the section content */
-    width: 75%; /* Set the content width to approximately 80% of the page */
+    width: 90%; /* Set the content width to approximately 80% of the page */
     max-width: 90%; /* Limit the maximum content width to approximately 90% of the page */
     margin-bottom: 40px; /* Adjust margin-bottom as needed */
     padding: 0 30px;
@@ -735,7 +735,9 @@ video {
     }
 
     /* Section Content */
-
+    section {
+        width: 85%;
+    }
     section p {
         line-height: 1.5;
     }
@@ -1083,7 +1085,10 @@ video {
     }
 
     /* Section Titles */
-
+    section {
+        width: 75%;
+    }
+    
     section h2 {
         position: relative;
         font-size: 2.2em;
