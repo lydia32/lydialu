@@ -254,6 +254,8 @@ footer p {
 .project-card {
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
     overflow: hidden;
     position: relative;
     margin-bottom: 30px;
